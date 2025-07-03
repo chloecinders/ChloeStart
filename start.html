@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Start</title>
+        <link rel="icon" href="assets/globe.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ChloeStart startpage">
+        <link rel="stylesheet" href="start.css" />
+    </head>
+    <body>
+        <div id="bookmarks"></div>
+
+        <div id="settings" style="bottom: -200px">
+            <div class="column">
+                <h1 class="header">Settings</h1>
+
+                <label>
+                    Hide Settings Button:
+                    <check-switch id="setting-hide"></check-switch>
+                </label>
+            </div>
+
+            <div class="column">
+                <label>
+                    Background Color:
+                    <input id="setting-background-color" type="color" />
+                </label>
+
+                <label>
+                    Bookmarks Color:
+                    <input id="setting-bookmarks-color" type="color" />
+                </label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="column">
+                <h1 class="header">Image Slideshow</h1>
+
+                <p>Images picked on page reload</p>
+            </div>
+
+            <div class="column">
+                <label>
+                    Enable Image Slideshow:
+                    <check-switch id="setting-images-enable"></check-switch>
+                </label>
+
+                <label>
+                    Interval (minutes):
+                    <input type="number" id="setting-images-interval"></input>
+                </label>
+            </div>
+
+            <div class="image-slideshow">
+                <div id="image-container">
+                    <button id="image-add">+</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="settings-hide" id="settings-hide" style="opacity: 0.05" aria-label="Open Settings">
+            <svg
+                style="rotate: 90deg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+            >
+                <!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+                <path
+                    fill="currentColor"
+                    d="M6.6 12.85q-.175-.125-.262-.312T6.25 12t.088-.538t.262-.312l7.4-4.7q.11-.07.228-.102T14.7 6q.35 0 .6.25t.25.65v10.1q0 .4-.25.65t-.6.25q-.12 0-.238-.035t-.227-.105zM13.8 15.2v-6.4L9.15 12z"
+                />
+            </svg>
+        </button>
+    </body>
+
+    <script src="start.js" type="module" defer></script>
+</html>

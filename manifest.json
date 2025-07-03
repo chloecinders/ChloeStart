@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "ChloeStart",
+    "version": "1.0",
+    "description": ":3",
+    "permissions": [
+        "storage",
+        "bookmarks",
+        "favicon"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "chrome_url_overrides": {
+        "newtab": "start.html"
+    },
+    "icons": {
+        "16": "assets/globe.png"
+    }
+}
