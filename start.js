@@ -301,14 +301,9 @@ function resizeImage(file, size) {
 
     function rerenderImageContainer() {
         [...(container?.childNodes || [])].forEach((child) => {
-            if (child.id !== "image-add") {
-                child.remove();
-            } else {
-                console.log(child);
-            }
+            if (child.id !== "image-add") child.remove();
         });
 
-        console.log(images);
         images.forEach(async (file) => {
             let thumbnail = thumbnails.find((t) => t.imageId == file.id);
 
@@ -345,8 +340,6 @@ function resizeImage(file, size) {
                     images = images.filter((f) => f.id != file.id);
 
                     const thumbnail = thumbnails.find((t) => t.imageId == file.id);
-
-                    console.log(thumbnail, thumbnails);
 
                     if (thumbnail) {
                         const [store, tx] = createThumbStore();
