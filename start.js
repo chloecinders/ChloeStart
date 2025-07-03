@@ -300,10 +300,15 @@ function resizeImage(file, size) {
     const container = document.querySelector("#image-container");
 
     function rerenderImageContainer() {
-        container?.childNodes?.forEach((child) => {
-            if (child.id !== "image-add") child.remove();
+        [...(container?.childNodes || [])].forEach((child) => {
+            if (child.id !== "image-add") {
+                child.remove();
+            } else {
+                console.log(child);
+            }
         });
 
+        console.log(images);
         images.forEach(async (file) => {
             let thumbnail = thumbnails.find((t) => t.imageId == file.id);
 
