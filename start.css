@@ -158,6 +158,10 @@ body {
         left: 12.5%;
         transition: rotate 0.3s ease;
     }
+
+    &:hover {
+        opacity: 1 !important;
+    }
 }
 
 .image-slideshow {

@@ -7,8 +7,9 @@ let settings =
     JSON.stringify({
         backgroundColor: "#202124",
         bookmarksColor: "#3c3c3c",
-        hide: true,
-        enableImages: true,
+        hide: false,
+        hideBookmarks: false,
+        enableImages: false,
         interval: 60,
     });
 
@@ -50,6 +51,20 @@ hideSetting.addEventListener("input", (_event) => {
     save();
 });
 
+const hideBookmarksSetting = document.querySelector("#setting-hide-bookmarks");
+hideBookmarksSetting.value = settings.hideBookmarks;
+
+if (settings.hideBookmarks) {
+    bookmarksBar.style.display = "none";
+}
+
+hideBookmarksSetting.addEventListener("input", (_event) => {
+    settings.hideBookmarks = hideBookmarksSetting.value;
+    bookmarksBar.style.display = settings.hideBookmarks ? "none" : "";
+
+    save();
+});
+
 const settingsButton = document.querySelector("#settings-hide");
 const settingsIcon = document.querySelector("#settings-hide > svg");
 let hidden = true;
@@ -70,7 +85,7 @@ settingsButton.addEventListener("click", (_event) => {
         settingsPanel.style.bottom = `-${settingsBounding.height}px`;
         settingsIcon.style.rotate = "90deg";
 
-        if (settings.hide) settingsButton.style.opacity = "0.05";
+        if (settings.hide) settingsButton.style.opacity = "0";
     }
 
     hidden = !hidden;
